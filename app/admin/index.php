@@ -16,11 +16,11 @@ require_once './models/AdminComment.php';
 
 //route
 $act = $_GET['act'] ?? '/';
-if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin'){
-    checkLoginAdmin();
- }
+// if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin'){
+//     checkLoginAdmin();
+//  }
 match($act){
-    '/' => (new AdminHomeController())->home(),
+    '/' => (new AdminCategoryController())->danhSachDanhMuc(),
    // route auth 
    'login-admin' => (new AdminTaiKhoanController())->formLogin(),
    'check-login-admin' => (new AdminTaiKhoanController())->login(),
