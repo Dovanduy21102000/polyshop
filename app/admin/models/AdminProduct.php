@@ -1,0 +1,7 @@
+<?php 
+class AdminProduct{
+    private $db;
+    public function __construct(){
+        $this->db = connectDB();
+    }
+}
