@@ -16,9 +16,9 @@ require_once './models/AdminComment.php';
 
 //route
 $act = $_GET['act'] ?? '/';
-// if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin'){
-//     checkLoginAdmin();
-//  }
+if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin'){
+    checkLoginAdmin();
+ }
 match($act){
     '/' => (new AdminCategoryController())->danhSachDanhMuc(),
    // route auth 
@@ -34,13 +34,13 @@ match($act){
    'xoa-danh-muc' => (new AdminCategoryController())->deleteDanhMuc(),
 
    //route sản phẩm
-//    'san-pham' => (new AdminProductController())->danhSachSanPham(),
-//    'form-them-san-pham' => (new AdminProductController())->formAddSanPham(),
-//    'them-san-pham' => (new AdminProductController())->postAddSanPham(),
-//    'form-sua-san-pham' => (new AdminProductController())->formEditSanPham(),
-//    'sua-san-pham' => (new AdminProductController())->postEditSanPham(),
-//    'sua-album-anh-san-pham' => (new AdminProductController())->postEditAnhSanPham(),
-//    'xoa-san-pham' => (new AdminProductController())->deleteSanPham(),
-//    'chi-tiet-san-pham' => (new AdminProductController())->detailSanPham(),
+   'san-pham' => (new AdminProductController())->danhSachSanPham(),
+   'form-them-san-pham' => (new AdminProductController())->formAddSanPham(),
+   'them-san-pham' => (new AdminProductController())->postAddSanPham(),
+   'form-sua-san-pham' => (new AdminProductController())->formEditSanPham(),
+   'sua-san-pham' => (new AdminProductController())->postEditSanPham(),
+   'sua-album-anh-san-pham' => (new AdminProductController())->postEditAnhSanPham(),
+   'xoa-san-pham' => (new AdminProductController())->deleteSanPham(),
+   'chi-tiet-san-pham' => (new AdminProductController())->detailSanPham(),
 
 };

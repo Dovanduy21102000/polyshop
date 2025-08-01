@@ -30,7 +30,7 @@
                 <?php }else{ ?>
                     <p class="login-box-msg">Nhập tài khoản của bạn</p>
                 <?php } ?>
-                <form action="<?= BASE_URL_ADMIN . 'check-login-admin' ?>" method="post">
+                <form action="<?= BASE_URL_ADMIN . '?act=check-login-admin' ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" name="email" placeholder="Email">
                         <div class="input-group-append">

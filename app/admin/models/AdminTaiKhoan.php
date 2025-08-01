@@ -185,7 +185,7 @@ class AdminTaiKhoan
                     return "tài khoản không có quyền đăng nhập";
                 }
             } else {
-                return "Bạn nhập sai thông tin";
+                return "Tài khoản hoặc mật khẩu không chính xác";
             }
         } catch (\Exception $e) {
             echo "Lỗi" . $e->getMessage();

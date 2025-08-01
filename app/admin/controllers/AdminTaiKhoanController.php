@@ -58,7 +58,7 @@ class AdminTaiKhoanController{
 
                 $_SESSION['flash'] == true;
 
-                header('Location: ' . BASE_URL_ADMIN . 'login-admin');
+                header('Location: ' . BASE_URL_ADMIN . '?act=login-admin');
                 exit();
             }
         }
