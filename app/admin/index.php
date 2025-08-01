@@ -43,4 +43,18 @@ match($act){
    'xoa-san-pham' => (new AdminProductController())->deleteSanPham(),
    'chi-tiet-san-pham' => (new AdminProductController())->detailSanPham(),
 
+
+   //quản lí tài khoản quản trị
+   'list-tai-khoan-quan-tri' => (new AdminTaiKhoanController())->danhSachQuanTri(),
+   'form-them-quan-tri' => (new AdminTaiKhoanController())->formAddQuanTri(),
+   'them-quan-tri' => (new AdminTaiKhoanController())->postAddQuanTri(),
+   'form-sua-quan-tri' => (new AdminTaiKhoanController())->formEditQuanTri(),
+   'sua-quan-tri' => (new AdminTaiKhoanController())->postEditQuanTri(),
+   
+   // route quản lý tài khoản cá nhân(quản trị)
+   'form-sua-thong-tin-ca-nhan-quan-tri' => (new AdminTaiKhoanController())->formEditCaNhanQuanTri(),
+   'sua-thong-tin-ca-nhan-quan-tri' => (new AdminTaiKhoanController())->postEditCaNhanQuanTri(),
+
+   'sua-mat-khau-ca-nhan-quan-tri' => (new AdminTaiKhoanController())->postEditMatKhauCaNhan(),
+
 };
