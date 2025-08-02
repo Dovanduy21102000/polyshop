@@ -424,4 +424,129 @@ class AdminTaiKhoanController{
         }
     }
 
+
+    public function danhSachKhachHang()
+    {
+        $listKhachHang = $this->modelTaiKhoan->getAllTaiKhoan(2);
+
+        require_once './views/taikhoan/khachhang/listKhachHang.php';
+    }
+
+    public function formEditKhachHang()
+    {
+        $id_khach_hang = $_GET['id_khach_hang'];
+        $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+
+        require_once './views/taikhoan/khachhang/editKhachHang.php';
+        deleteSessionError();
+    }
+
+    public function postEditKhachHang()
+    {
+        //hàm này dùng để xử lí thêm dữ liệu
+
+        //ktra xem dữ liệu có được submit lên ko
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // lấy ra dữ liệu
+
+            // Lấy ra dữ liệu cũ của sản phẩm
+            $khach_hang_id = $_POST['khach_hang_id'];
+
+            $ho_ten = $_POST['ho_ten'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $so_dien_thoai = $_POST['so_dien_thoai'] ?? '';
+            $ngay_sinh = $_POST['ngay_sinh'] ?? '';
+            $gioi_tinh = $_POST['gioi_tinh'] ?? '';
+            $dia_chi = $_POST['dia_chi'] ?? '';
+            $chuc_vu_id = 2;
+
+
+
+
+
+
+
+            //tạo một mảng trống để chứa dữ liệu
+            $errors = [];
+            if (empty($ho_ten)) {
+                $errors['ho_ten'] = "Tên ko được để trống";
+            }
+            if (empty($email)) {
+                $errors['email'] = "Email ko được để trống";
+            }
+
+            if (empty($so_dien_thoai)) {
+                $errors['so_dien_thoai'] = "Số điện thoại ko được để trống";
+            }
+
+            if (empty($ngay_sinh)) {
+                $errors['ngay_sinh'] = "Ngày sinh ko được để trống";
+            }
+
+
+
+            if (empty($dia_chi)) {
+                $errors['dia_chi'] = "Địa chỉ ko được để trống";
+            }
+
+
+
+
+
+
+
+
+
+
+            $_SESSION['error'] = $errors;
+
+            // nếu ko lỗi tiến hành thêm sản phẩm
+            if (empty($errors)) {
+                //  var_dump('abc');die;
+
+                //Nếu ko lỗi tiến hành thêm sản phẩm
+                $this->modelTaiKhoan->updateKhachHang(
+                    $khach_hang_id,
+                    $ho_ten,
+                    $email,
+                    $so_dien_thoai,
+                    $ngay_sinh,
+                    $gioi_tinh,
+                    $dia_chi,
+                    $chuc_vu_id = 2,
+
+
+
+                );
+
+                // var_dump('12');die;000
+
+
+
+
+                header('Location: ' . BASE_URL_ADMIN . 'list-tai-khoan-khach-hang');
+                exit();
+            } else {
+
+                //trả về form và lỗi
+                // Đặt chỉ thị xóa session sau khi hiển thị form
+                $_SESSION['flash'] = true;
+                header('Location: ' . BASE_URL_ADMIN . 'form-sua-khach-hang&id_khach_hang=' . $khach_hang_id);
+                exit();
+            }
+        }
+    }
+
+    public function detailKhachHang()
+    {
+        $id_khach_hang = $_GET['id_khach_hang'];
+        $khachHang = $this->modelTaiKhoan->getDetailTaiKhoan($id_khach_hang);
+
+        $listDonHang = $this->modelDonHang->getDonHangFromKhachHang($id_khach_hang);
+
+        $listBinhLuan = $this->modelSanPham->getBinhLuanFromKhachHang($id_khach_hang);
+
+        require_once './views/taikhoan/khachhang/detailKhachHang.php';
+    }
+
 }
