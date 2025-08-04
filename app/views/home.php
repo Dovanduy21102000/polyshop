@@ -10,7 +10,7 @@
         <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/duc1.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/slider_1.webp">
                     <div class="container">
                         <div class="row">
 
@@ -21,7 +21,7 @@
             <!-- single slider item start -->
             <!-- single slider item start -->
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/duc2.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/slider_2.webp">
                     <div class="container">
                         <div class="row">
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="hero-single-slide hero-overlay">
-                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/home1-slide3.jpg">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/slider_3.webp">
                     <div class="container">
                         <div class="row">
 
@@ -39,7 +39,15 @@
                     </div>
                 </div>
             </div>
+            <div class="hero-single-slide hero-overlay">
+                <div class="hero-slider-item bg-img" data-bg="assets/img/slider/slider_5.webp">
+                    <div class="container">
+                        <div class="row">
 
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
@@ -101,40 +109,7 @@
     </div>
     <!-- service policy area end -->
 
-    <!-- banner statistics area start -->
-    <div class="banner-statistics-area">
-        <div class="container">
-            <div class="row row-20 mtn-20">
-                <div class="col-sm-6">
-                    <figure class="banner-statistics mt-20">
-                        <a href="#">
-                            <img src="assets/img/banner/duc3.jpg" alt="product banner">
-                        </a>
-                        <div class="banner-content text-right">
-                            <h5 class="banner-text1">Bạn muốn đẹp trai</h5>
-                            <h2 class="banner-text2">Lệch lãm<span>Phong độ</span></h2>
-                            <a href="shop.html" class="btn btn-text">Hãy tới 33Boy</a>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-sm-6">
-                    <figure class="banner-statistics mt-20">
-                        <a href="#">
-                            <img src="assets/img/banner/duc4.jpg" alt="product banner">
-                        </a>
-                        <div class="banner-content text-right">
-                            <h5 class="banner-text1">Bạn muốn trở nên cuốn hút hơn</h5>
-                            <h2 class="banner-text2">Trưởng thành hơn<span>Mạnh mẽ hơn</span></h2>
-                            <a href="shop.html" class="btn btn-text">Hãy tới 33Boy</a>
-                        </div>
-                    </figure>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- banner statistics area end -->
-
+    
     <!-- product area start -->
     <section class="product-area section-padding">
         <div class="container">

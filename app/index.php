@@ -27,4 +27,12 @@ match ($act) {
     '/'=>(new HomeController())->home(),
 
     'all-san-pham' => (new HomeController())->allSanPham(),
+
+    //auth
+    'login' => (new HomeController())->formLogin(),
+    'logout' => (new HomeController())->logout(),
+    'check-login' => (new HomeController())->postLogin(),
+    'register' => (new HomeController())->formRegister(),
+    'dang-ky' => (new HomeController())->postRegister(),
+
 };
