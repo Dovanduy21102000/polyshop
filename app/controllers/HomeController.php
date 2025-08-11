@@ -57,6 +57,9 @@ class HomeController
             if ($user == $email) { // TRường hợp đăng nhập thành công
                 // Lưu thông tin vào session 
                 $_SESSION['user_client'] = $user;
+                // var_dump($_SESSION['user_client'],$user);
+
+                // die;
                 header("Location: " . BASE_URL);
                 exit();
             } else {
@@ -84,6 +87,7 @@ class HomeController
     {
         require_once './views/auth/formRegister.php';
 
+        
         exit();
     }
 
