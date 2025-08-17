@@ -145,4 +145,66 @@ class HomeController
         }
     }
 
+    public function chiTietSanPham()
+    {
+        $id = $_GET['id_san_pham'];
+        $sanPham = $this->modelSanPham->getDetailSanPham($id);
+        $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
+        if(isset($_SESSION['user_client'])){
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+        }
+        //binh luan
+        $listBinhLuan = $this->modelSanPham->getBinhLuanFromSanPham($id);
+        $listSanPhamCungDanhMuc = $this->modelSanPham->getListSanPhamDanhMuc($sanPham['danh_muc_id']);
+        if($sanPham){
+            require_once './views/detailSanPham.php';
+        }else {
+            var_dump("Không tìm thấy sản phẩm");
+           // header('Location: ' . BASE_URL);
+            exit();
+        }
+    }
+    public function postBinhLuan()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+            $san_pham_id = $_POST['san_pham_id'];
+            $tai_khoan_id = $_POST['tai_khoan_id'];
+            $noi_dung = $_POST['noi_dung'];
+            $ngay_dang = date('Y-m-d H:i:s');
+            $trang_thai = 1;
+
+            $user = $this->modelTaiKhoan->getTaiKhoanFromEmail($_SESSION['user_client']);
+
+            $errors = [];
+            if (empty($noi_dung)) {
+                $errors['noi_dung'] = "Bạn chưa bình luận";
+            }
+
+            $_SESSION['error'] = $errors;
+
+            // nếu ko lỗi tiến hành thêm danh mục
+            if (empty($errors)) {
+
+                //Nếu ko lỗi tiến hành thêm danh mục
+                $this->modelBinhLuan->insertBinhLuan(
+                    $san_pham_id,
+                    $tai_khoan_id,
+                    $noi_dung,
+                    $ngay_dang,
+                    $trang_thai
+                );
+
+
+                header('Location: ' . BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $san_pham_id);
+
+                exit();
+            } else {
+                //trả về form và lỗi
+                header('Location: ' . BASE_URL . '?act=chi-tiet-san-pham&id_san_pham=' . $san_pham_id);
+                exit();
+            }
+        }
+    }
 }

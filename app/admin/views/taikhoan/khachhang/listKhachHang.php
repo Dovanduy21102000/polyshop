@@ -66,7 +66,7 @@ include './views/layouts/slidebar.php';
                       <td>
                         <div class="btn-group">
 
-                        <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
+                        <!-- <a href="<?= BASE_URL_ADMIN . '?act=chi-tiet-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
                             <button class="btn btn-success">Chi Tiết</button>
                           </a>
                           <a href="<?= BASE_URL_ADMIN . '?act=form-sua-khach-hang&id_khach_hang=' . $khachHang['id'] ?>">
@@ -75,7 +75,7 @@ include './views/layouts/slidebar.php';
 
                           <a href="<?= BASE_URL_ADMIN . '?act=reset-password&id_quan_tri=' . $khachHang['id'] ?>" onclick="return confirm('Bạn có chắc chắn không ? ')">
                             <button class="btn btn-danger">Reset</button>
-                          </a>
+                          </a> -->
                         </div>
 
                       </td>

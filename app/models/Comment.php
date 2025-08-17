@@ -5,7 +5,7 @@ class Comment{
         $this->conn=connectDB();
 
     }
-    public function inserBinhLuan($san_pham_id, $tai_khoan_id, $noi_dung, $ngay_dang, $trang_thai) {
+    public function insertBinhLuan($san_pham_id, $tai_khoan_id, $noi_dung, $ngay_dang, $trang_thai) {
         try {
             // Truy vấn SQL để thêm bình luận
             $sql = 'INSERT INTO binh_luans (san_pham_id, tai_khoan_id, noi_dung, ngay_dang, trang_thai)

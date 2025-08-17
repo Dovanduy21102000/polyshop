@@ -27,6 +27,7 @@ match ($act) {
     '/'=>(new HomeController())->home(),
 
     'all-san-pham' => (new HomeController())->allSanPham(),
+    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
 
     //auth
     'login' => (new HomeController())->formLogin(),
@@ -35,4 +36,6 @@ match ($act) {
     'register' => (new HomeController())->formRegister(),
     'dang-ky' => (new HomeController())->postRegister(),
 
+    //binh luan
+    'dang-binh-luan' => (new HomeController())->postBinhLuan(),
 };
