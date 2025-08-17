@@ -216,8 +216,8 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Sản Phẩm Nổi Bật</h2>
-                        <p class="sub-title">Các sản phẩm dưới đây là những sản phẩm được quan tâm nhiều nhất</p>
+                        <h2 class="title">Sản Phẩm Mới Nhất</h2>
+                        <p class="sub-title">Các sản phẩm dưới đây là những sản phẩm mới được đăng</p>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="product-carousel-4_2 slick-row-10 slick-arrow-style">
-                    <?php foreach ($listSanPhamNoiBat as $key => $sanPham): ?>
+                    <?php foreach ($listSanPhamMoiNhat as $key => $sanPham): ?>
                                         <!-- product item start -->
                                         <div class="product-item">
                                             <figure class="product-thumb">

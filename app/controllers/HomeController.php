@@ -23,6 +23,9 @@ class HomeController
     public function home()
     {
         $listSanPham = $this->modelSanPham->getAllSanPham();
+        $listSanPhamMoiNhat = $this->modelSanPham->getAllSanPhamMoiNhat();
+        // var_dump($listSanPhamMoiNhat);
+        // die;
         require_once './views/home.php';
     }
 
