@@ -28,6 +28,7 @@ match ($act) {
 
     'all-san-pham' => (new HomeController())->allSanPham(),
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+    'san-pham-trong-danh-muc' => (new HomeController())->danhSachSanPhamTheoDanhMuc(),
 
     //auth
     'login' => (new HomeController())->formLogin(),

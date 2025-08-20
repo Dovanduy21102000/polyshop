@@ -210,4 +210,16 @@ class HomeController
             }
         }
     }
+    public function danhSachSanPhamTheoDanhMuc()
+    {
+        $danh_muc_id = isset($_GET['danh_muc_id']) ? $_GET['danh_muc_id'] : null;
+        if ($danh_muc_id) {
+            $listSanPham = $this->modelSanPham->getSanPhamByCategory($danh_muc_id);
+            
+        }else{
+            $listSanPham = $this->modelSanPham->getAllSanPham();
+        }
+        $listDanhMuc = $this->modelDanhMuc->getAllDanhMuc();
+        require_once './views/products_category.php';
+    }
 }

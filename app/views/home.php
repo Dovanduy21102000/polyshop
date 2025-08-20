@@ -316,31 +316,7 @@
                     <!-- section title start -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonial-thumb-wrapper">
-                        <div class="testimonial-thumb-carousel">
-                            <div class="testimonial-thumb">
-                                <img src="assets/img/testimonial/duc2.jpg" alt="testimonial-thumb">
-                            </div>
-                            <div class="testimonial-thumb">
-                                <img src="assets/img/testimonial/duck.jpg" alt="testimonial-thumb">
-                            </div>
-                            <div class="testimonial-thumb">
-                                <img src="assets/img/testimonial/duck3.jpg" alt="testimonial-thumb">
-                            </div>
-                            <div class="testimonial-thumb">
-                                <img src="assets/img/testimonial/duck.jpg" alt="testimonial-thumb">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-content-wrapper">
-                        <div class="testimonial-content-carousel">
             
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 </main>

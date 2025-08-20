@@ -103,10 +103,26 @@ class Product
                     INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
                     WHERE san_phams.trang_thai = 1
                     ORDER BY san_phams.ngay_nhap DESC
-                    LIMIT 5';
+                    LIMIT 10';
 
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+    public function getSanPhamByCategory($danh_muc_id)
+    {
+        try {
+            $sql = 'SELECT san_phams.*, danh_mucs.ten_danh_muc
+                    FROM san_phams
+                    INNER JOIN danh_mucs ON san_phams.danh_muc_id = danh_mucs.id
+                    WHERE san_phams.trang_thai = 1 AND san_phams.danh_muc_id = :danh_muc_id';
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':danh_muc_id' => $danh_muc_id]);
 
             return $stmt->fetchAll();
         } catch (Exception $e) {
